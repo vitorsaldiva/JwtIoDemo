@@ -27,14 +27,14 @@ namespace CustomJwt
                 { JwtHashAlgorithm.HS256, (key, value) => { using (var sha = new HMACSHA256(key)) { return sha.ComputeHash(value); } } }
             };
 
-            var secret = "n80iIO5zek1Ss6aIylMM5120UcB3G5R3YGrSC+fiIW9QgjBqyH+XnW5M1LooXBKDV6cIE7AvgoM4q8CDoW5mb5I3OEgioh/dHbRSKkfaTgNYT7Q/2g2+IP+sMR2/E/wA5mQo8STKYLWIKvb83Vc8Xly8K1K5JpWEeBdIdnABHQm3UUTisl3fju7+tq8XwUKob9PBA+iqRr/Po3gNgepEhwzsRIsTWqv+3J1ju2/lbLbUoAadQBohDQuEEw7l0gwEui+iK323lRUnwiZKRotQ6TbBOOHjp0byyjd/jkacGAqRXwA/Q0E5HQvwdn3z18aANCnYJJkrIBPpsGBGNwbPig==";
+            var secret = "";
             var utc0 = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             var issueTime = DateTime.Now;
             var exp = (int)issueTime.AddMinutes(55).Subtract(utc0).TotalSeconds;
 
             var payload = new
             {
-                iss = "4c17a3c1-cfee-445b-a9b3-2a9fe4c44b63",
+                iss = "",
                 access = "cardPayments.authorize",
                 exp = exp,
             };
